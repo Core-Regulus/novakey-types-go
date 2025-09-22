@@ -8,7 +8,7 @@ type SetProjectRequest struct {
 	Name  					string 						`json:"name,omitempty"`
 	WorkspaceId  		uuid.UUID					`json:"workspaceId,omitempty"`
 	Description  		string 						`json:"description,omitempty"`
-	User						AuthEntity 				`json:"user"`	
+	Signer					AuthEntity 				`json:"signer"`	
 }
 
 type SetProjectResponse struct {
@@ -18,7 +18,7 @@ type SetProjectResponse struct {
 
 type DeleteProjectRequest struct {    
 	Id  						uuid.UUID `json:"id"`
-	User						AuthEntity `json:"user"`
+	Signer					AuthEntity `json:"signer"`
 }
 
 type DeleteProjectResponse struct {
