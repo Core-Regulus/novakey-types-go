@@ -1,5 +1,7 @@
 package novakeytypes
 
+import "fmt"
+
 type ValidationErrorResponse struct {
 	Error       bool
 	FailedField string
@@ -14,3 +16,6 @@ type ErrorResponse struct {
 	ErrorDescription string `json:"errorDescription,omitempty"`
 }
 
+func FormatErrorResponse(err ErrorResponse) string {
+  return fmt.Sprintf("status %d, error %s, code %s, description %s", err.Status, err.Error, err.Code, err.ErrorDescription)
+}
