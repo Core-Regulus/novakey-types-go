@@ -14,15 +14,11 @@ type AuthEntity struct {
 	Password 	string 		`json:"password,omitempty"`
 }
 
-type Workspace struct {
-	Id 				uuid.UUID `json:"id"`
-	RoleCode  string 		`json:"roleCode"`
-}
-
 type SetUserRequest struct {	
 	AuthEntity
 	Email						string   `json:"email,omitempty"`
 	Workspaces   		[]Workspace `json:"workspaces,omitempty"`
+	Projects   			[]Project `json:"projects,omitempty"`
 	Signer					AuthEntity `json:"signer"`
 }
 

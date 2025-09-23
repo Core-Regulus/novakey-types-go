@@ -2,6 +2,10 @@ package novakeytypes
 
 import "github.com/google/uuid"
 
+type Project struct {
+	Id 				uuid.UUID `json:"id"`
+	RoleCode  string 		`json:"roleCode"`
+}
 
 type SetProjectRequest struct {	
   Id  						uuid.UUID 				`json:"id,omitempty"`

@@ -4,6 +4,11 @@ import (
 	"github.com/google/uuid"
 )
 
+type Workspace struct {
+	Id 				uuid.UUID `json:"id"`
+	RoleCode  string 		`json:"roleCode"`
+}
+
 type SetWorkspaceRequest struct {	
   Id  						uuid.UUID 				`json:"id,omitempty"`
 	Name  					string 						`json:"name"`
