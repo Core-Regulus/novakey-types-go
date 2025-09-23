@@ -7,11 +7,17 @@ type Project struct {
 	RoleCode  string 		`json:"roleCode"`
 }
 
+type Key struct {
+	Key				string `json:"key"`
+	Value 		string `json:"value"`
+}
+
 type SetProjectRequest struct {	
   Id  						uuid.UUID 				`json:"id,omitempty"`
 	Name  					string 						`json:"name,omitempty"`
 	WorkspaceId  		uuid.UUID					`json:"workspaceId,omitempty"`
 	Description  		string 						`json:"description,omitempty"`
+	Keys   			  	[]Key 						`json:"keys,omitempty"`
 	Signer					AuthEntity 				`json:"signer"`	
 }
 

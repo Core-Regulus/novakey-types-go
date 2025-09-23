@@ -16,10 +16,10 @@ type AuthEntity struct {
 
 type SetUserRequest struct {	
 	AuthEntity
-	Email						string   `json:"email,omitempty"`
+	Email						string   		`json:"email,omitempty"`
 	Workspaces   		[]Workspace `json:"workspaces,omitempty"`
-	Projects   			[]Project `json:"projects,omitempty"`
-	Signer					AuthEntity `json:"signer"`
+	Projects   			[]Project 	`json:"projects,omitempty"`
+	Signer					AuthEntity 	`json:"signer"`
 }
 
 type SetUserResponse struct {	
