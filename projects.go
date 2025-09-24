@@ -21,6 +21,17 @@ type SetProjectRequest struct {
 	Signer					AuthEntity 				`json:"signer"`	
 }
 
+type GetProjectRequest struct {	
+  Id  						uuid.UUID 				`json:"id"`		
+	Signer					AuthEntity 				`json:"signer"`	
+}
+
+type GetProjectResponse struct {
+	Id  						uuid.UUID 				`json:"id"`
+	Keys   			  	[]Key 						`json:"keys"`
+	ErrorResponse
+}
+
 type SetProjectResponse struct {
 	Id 					 		uuid.UUID 	 `json:"id,omitempty"`		
 	ErrorResponse
