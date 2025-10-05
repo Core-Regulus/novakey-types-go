@@ -42,10 +42,6 @@ type SetProjectResponse struct {
 	Error
 }
 
-func (r SetProjectResponse) GetErrorResponse() Error {
-  return r.Error
-}
-
 type DeleteProjectRequest struct {    
 	Id  						uuid.UUID `json:"id"`
 	Signer					AuthEntity `json:"signer"`
@@ -54,8 +50,4 @@ type DeleteProjectRequest struct {
 type DeleteProjectResponse struct {
 	Id  						uuid.UUID 	 `json:"id,omitempty"`
   Error
-}
-
-func (r DeleteProjectResponse) GetErrorResponse() Error {
-  return r.Error
 }

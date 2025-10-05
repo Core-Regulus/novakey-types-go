@@ -23,10 +23,6 @@ type SetWorkspaceResponse struct {
 	Error
 }
 
-func (r SetWorkspaceResponse) GetError() Error {
-  return r.Error
-}
-
 type DeleteWorkspaceRequest struct {    
 	Id  						uuid.UUID `json:"id"`
 	Signer					AuthEntity `json:"signer"`
@@ -35,8 +31,4 @@ type DeleteWorkspaceRequest struct {
 type DeleteWorkspaceResponse struct {
 	Id  						uuid.UUID 	 `json:"id,omitempty"`
   Error
-}
-
-func (r DeleteWorkspaceResponse) GetError() Error {
-  return r.Error
 }

@@ -47,10 +47,6 @@ type SetUserResponse struct {
 	Error
 }
 
-func (r SetUserResponse) GetErrorResponse() Error {
-  return r.Error
-}
-
 type DeleteUserRequest struct {
 	AuthEntity
 }
@@ -60,6 +56,3 @@ type DeleteUserResponse struct {
   Error
 }
 
-func (r DeleteUserResponse) GetError() Error {
-  return r.Error
-}
