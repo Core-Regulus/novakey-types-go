@@ -15,6 +15,9 @@ type User struct {
 
 type Signer struct {
 	Id 					uuid.UUID 	`json:"id,omitempty" yaml:"id,omitempty"`
+	Email 			string 			`json:"email,omitempty" yaml:"email,omitempty"`
+	Username 		string 			`json:"username,omitempty" yaml:"username,omitempty"`
+	PublicKey 	string 			`json:"publicKey" yaml:"publicKey"`
 	PrivateKey 	string 			`json:"privateKey" yaml:"privateKey"`
 	Password 		string 			`json:"password,omitempty" yaml:"password,omitempty"`
 }	
