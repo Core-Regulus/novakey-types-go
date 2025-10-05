@@ -3,8 +3,12 @@ package novakeytypes
 import "github.com/google/uuid"
 
 type Project struct {
-	Id 				uuid.UUID `json:"id"`
-	RoleCode  string 		`json:"roleCode"`
+	Id 							uuid.UUID 	`json:"id" yaml:"id"`
+	RoleCode  			string 			`json:"roleCode" yaml:"roleCode"`
+	WorkspaceId  		uuid.UUID		`json:"workspaceId,omitempty" yaml:"workspaceId"`
+	Description  		string 			`json:"description,omitempty" yaml:"description"`
+	Keys   			  	[]Key 			`json:"keys,omitempty" yaml:"keys"`
+
 }
 
 type Key struct {
@@ -13,11 +17,11 @@ type Key struct {
 }
 
 type SetProjectRequest struct {	
-  Id  						uuid.UUID 				`json:"id,omitempty" yaml:"id"`
-	Name  					string 						`json:"name,omitempty" yaml:"name"`
-	WorkspaceId  		uuid.UUID					`json:"workspaceId,omitempty" yaml:"workspaceId"`
-	Description  		string 						`json:"description,omitempty" yaml:"description"`
-	Keys   			  	[]Key 						`json:"keys,omitempty" yaml:"keys"`
+  Id  						uuid.UUID 				`json:"id,omitempty"`
+	Name  					string 						`json:"name,omitempty"`
+	WorkspaceId  		uuid.UUID					`json:"workspaceId,omitempty"`
+	Description  		string 						`json:"description,omitempty"`
+	Keys   			  	[]Key 						`json:"keys,omitempty"`
 	Signer					AuthEntity 				`json:"signer"`	
 }
 
