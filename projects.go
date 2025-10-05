@@ -5,6 +5,7 @@ import "github.com/google/uuid"
 type Project struct {
 	Id 							uuid.UUID 	`json:"id" yaml:"id"`
 	RoleCode  			string 			`json:"roleCode" yaml:"roleCode"`
+	Name  					string 			`json:"name" yaml:"name"`
 	WorkspaceId  		uuid.UUID		`json:"workspaceId,omitempty" yaml:"workspaceId"`
 	Description  		string 			`json:"description,omitempty" yaml:"description"`
 	Keys   			  	[]Key 			`json:"keys,omitempty" yaml:"keys"`
