@@ -14,8 +14,9 @@ type User struct {
 }	
 
 type AuthEntity struct {
-	Id 				uuid.UUID `json:"id,omitempty"`
-	Username  string 		`json:"username,omitempty"`
+	Id 				uuid.UUID `json:"id,omitempty" yaml:"id,omitempty"`	
+	Email		  string 		`json:"email,omitempty" yaml:"email,omitempty"`
+	Username  string 		`json:"username,omitempty" yaml:"username,omitempty"`
 	PublicKey string 		`json:"publicKey"`
 	Signature string 		`json:"signature"`
 	Message   string 		`json:"message"`  
