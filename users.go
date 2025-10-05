@@ -4,10 +4,18 @@ import (
 	"github.com/google/uuid"
 )
 
+type User struct {
+	Id 				uuid.UUID 		`json:"id" yaml:"id"`
+	Email  		string 				`json:"email" yaml:"email"`
+	Username  string 				`json:"username" yaml:"username"`
+	PublicKey string 				`json:"publicKey" yaml:"publicKey"`
+	Workspaces []Workspace 	`json:"workspaces,omitempty" yaml:"workspaces,omitempty"`
+	Projects   []Project 		`json:"projects,omitempty" yaml:"projects,omitempty"`	
+}	
+
 type AuthEntity struct {
-	Id 				uuid.UUID `json:"id,omitempty" yaml:"id,omitempty"`	
-	Email		  string 		`json:"email,omitempty" yaml:"email,omitempty"`
-	Username  string 		`json:"username,omitempty" yaml:"username,omitempty"`
+	Id 				uuid.UUID `json:"id,omitempty"`
+	Username  string 		`json:"username,omitempty"`
 	PublicKey string 		`json:"publicKey"`
 	Signature string 		`json:"signature"`
 	Message   string 		`json:"message"`  

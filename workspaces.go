@@ -7,6 +7,7 @@ import (
 type Workspace struct {
 	Id 				uuid.UUID 	`json:"id" yaml:"id"`
 	Name  		string 			`json:"name" yaml:"name"`
+	Projects []Project 		`json:"projects,omitempty" yaml:"projects,omitempty"`
 	RoleCode  string 			`json:"roleCode" yaml:"roleCode"`
 }
 
