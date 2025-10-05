@@ -9,13 +9,18 @@ type ValidationErrorResponse struct {
 	Tag         string
 }
 
-type ErrorResponse struct {
+
+type Error struct {
 	Error            string `json:"error,omitempty"`
 	Code             string `json:"code,omitempty"`
 	Status           int    `json:"status,omitempty"`
 	ErrorDescription string `json:"errorDescription,omitempty"`
 }
 
-func FormatErrorResponse(err ErrorResponse) string {
+type ErrorResponse interface {
+  GetError() Error
+}
+
+func FormatErrorResponse(err Error) string {
   return fmt.Sprintf("status %d, error %s, code %s, description %s", err.Status, err.Error, err.Code, err.ErrorDescription)
 }

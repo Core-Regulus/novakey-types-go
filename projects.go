@@ -34,12 +34,16 @@ type GetProjectRequest struct {
 type GetProjectResponse struct {
 	Id  						uuid.UUID 				`json:"id"`
 	Keys   			  	[]Key 						`json:"keys"`
-	ErrorResponse
+	Error
 }
 
 type SetProjectResponse struct {
 	Id 					 		uuid.UUID 	 `json:"id,omitempty"`		
-	ErrorResponse
+	Error
+}
+
+func (r SetProjectResponse) GetErrorResponse() Error {
+  return r.Error
 }
 
 type DeleteProjectRequest struct {    
@@ -49,5 +53,9 @@ type DeleteProjectRequest struct {
 
 type DeleteProjectResponse struct {
 	Id  						uuid.UUID 	 `json:"id,omitempty"`
-  ErrorResponse
+  Error
+}
+
+func (r DeleteProjectResponse) GetErrorResponse() Error {
+  return r.Error
 }

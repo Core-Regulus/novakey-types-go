@@ -44,7 +44,11 @@ type SetUserResponse struct {
 	Id								uuid.UUID   `json:"id,omitempty"`	
 	Username					string  		`json:"username,omitempty"`
 	Password					string   		`json:"password,omitempty"`
-	ErrorResponse
+	Error
+}
+
+func (r SetUserResponse) GetErrorResponse() Error {
+  return r.Error
 }
 
 type DeleteUserRequest struct {
@@ -53,5 +57,9 @@ type DeleteUserRequest struct {
 
 type DeleteUserResponse struct {
 	Id								uuid.UUID   `json:"id,omitempty"`		
-  ErrorResponse
+  Error
+}
+
+func (r DeleteUserResponse) GetError() Error {
+  return r.Error
 }
