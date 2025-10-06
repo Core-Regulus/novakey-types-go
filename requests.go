@@ -9,8 +9,9 @@ type ValidationErrorResponse struct {
 	Tag         string
 }
 
-type ErrorResponse struct {
-	Error
+type ErrorResponder interface {
+	GetError() Error
+	SetError(err Error)
 }
 
 type Error struct {
