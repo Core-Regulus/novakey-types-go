@@ -18,8 +18,8 @@ type Signer struct {
 	Email 			string 			`json:"email,omitempty" yaml:"email,omitempty"`
 	Username 		string 			`json:"username,omitempty" yaml:"username,omitempty"`
 	PublicKey 	string 			`json:"publicKey" yaml:"publicKey"`
-	PrivateKey 	string 		
-	Password 		string 			`json:"password,omitempty"`
+	PrivateKey 	string 			`json:"-" yaml:"-"`
+	Password 		string 			`json:"-" yaml:"-"`
 }	
 
 type AuthEntity struct {
