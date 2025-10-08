@@ -59,11 +59,3 @@ type DeleteProjectResponse struct {
 	Id  						uuid.UUID 	 `json:"id,omitempty"`
   Error
 }
-
-func (r *DeleteProjectResponse) GetError() Error {
-	return r.Error
-}
-
-func (r *DeleteProjectResponse) SetError(err Error) {
-	r.Error = err
-}

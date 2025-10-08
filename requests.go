@@ -9,11 +9,6 @@ type ValidationErrorResponse struct {
 	Tag         string
 }
 
-type ErrorResponder interface {
-	GetError() Error
-	SetError(err Error)
-}
-
 type Error struct {
 	Error            string `json:"error,omitempty"`
 	Code             string `json:"code,omitempty"`

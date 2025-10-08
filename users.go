@@ -18,8 +18,8 @@ type Signer struct {
 	Email 			string 			`json:"email,omitempty" yaml:"email,omitempty"`
 	Username 		string 			`json:"username,omitempty" yaml:"username,omitempty"`
 	PublicKey 	string 			`json:"publicKey" yaml:"publicKey"`
-	PrivateKey 	string 			`json:"privateKey" yaml:"privateKey"`
-	Password 		string 			`json:"password,omitempty" yaml:"password,omitempty"`
+	PrivateKey 	string 		
+	Password 		string 			`json:"password,omitempty"`
 }	
 
 type AuthEntity struct {
@@ -47,14 +47,6 @@ type SetUserResponse struct {
 	Error
 }
 
-func (r *SetUserResponse) GetError() Error {
-	return r.Error
-}
-
-func (r *SetUserResponse) SetError(err Error) {
-	r.Error = err
-}
-
 type DeleteUserRequest struct {
 	AuthEntity
 }
@@ -62,12 +54,4 @@ type DeleteUserRequest struct {
 type DeleteUserResponse struct {
 	Id								uuid.UUID   `json:"id,omitempty"`		
   Error
-}
-
-func (r *DeleteUserResponse) GetError() Error {
-	return r.Error
-}
-
-func (r *DeleteUserResponse) SetError(err Error) {
-	r.Error = err
 }
