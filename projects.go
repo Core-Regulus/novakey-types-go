@@ -4,7 +4,7 @@ import "github.com/google/uuid"
 
 type Project struct {
 	Id 							uuid.UUID 	`json:"id" yaml:"id"`
-	RoleCode  			string 			`json:"roleCode" yaml:"roleCode"`
+	RoleCodes  			[]string 		`json:"roleCodes" yaml:"roleCodes"`
 	Name  					string 			`json:"name" yaml:"name"`
 	WorkspaceId  		uuid.UUID		`json:"workspaceId,omitempty" yaml:"workspaceId"`
 	Description  		string 			`json:"description,omitempty" yaml:"description"`
@@ -21,7 +21,7 @@ type SetProjectRequest struct {
   Id  						uuid.UUID 				`json:"id,omitempty"`
 	Name  					string 						`json:"name,omitempty"`
 	WorkspaceId  		uuid.UUID					`json:"workspaceId,omitempty"`
-	RoleCode  			string 						`json:"roleCode" yaml:"roleCode"`
+	RoleCodes  			[]string 					`json:"roleCodes" yaml:"roleCodes"`
 	Description  		string 						`json:"description,omitempty"`
 	Keys   			  	[]Key 						`json:"keys,omitempty"`
 	Signer					AuthEntity 				`json:"signer"`	
@@ -40,7 +40,7 @@ type GetProjectResponse struct {
 
 type SetProjectResponse struct {
 	Id 					 		uuid.UUID 	 `json:"id,omitempty"`
-	RoleCode  			string 			 `json:"roleCode" yaml:"roleCode"`	
+	RoleCodes  			[]string 		 `json:"roleCodes" yaml:"roleCodes"`	
 	Error
 }
 

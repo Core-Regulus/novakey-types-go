@@ -8,20 +8,20 @@ type Workspace struct {
 	Id 				uuid.UUID 	`json:"id" yaml:"id"`
 	Name  		string 			`json:"name" yaml:"name"`
 	Project 	Project 		`json:"project" yaml:"project"`
-	RoleCode  string 			`json:"roleCode" yaml:"roleCode"`
+	RoleCodes []string 			`json:"roleCodes" yaml:"roleCodes"`
 }
 
 type SetWorkspaceRequest struct {	
   Id  						uuid.UUID 				`json:"id,omitempty"`
 	Name  					string 						`json:"name"`
-	RoleCode  			string 						`json:"roleCode" yaml:"roleCode"`
+	RoleCodes  			[]string 					`json:"roleCodes" yaml:"roleCodes"`
 	Signer					AuthEntity 				`json:"signer"`	
 }
 
 
 type SetWorkspaceResponse struct {
 	Id 					 		uuid.UUID 	 `json:"id,omitempty"`
-	RoleCode  			string 			 `json:"roleCode" yaml:"roleCode"`
+	RoleCodes  			[]string 			`json:"roleCodes" yaml:"roleCodes"`
 	Error
 }
 
