@@ -41,9 +41,10 @@ type SetUserRequest struct {
 }
 
 type SetUserResponse struct {	
-	Id								uuid.UUID   `json:"id,omitempty"`	
-	Username					string  		`json:"username,omitempty"`
-	Password					string   		`json:"password,omitempty"`
+	Id								uuid.UUID   `json:"id"`	
+	Username					string  		`json:"username"`
+	PublicKey					string  		`json:"publicKey"`
+	Password					string   		`json:"password"`
 	Error
 }
 
