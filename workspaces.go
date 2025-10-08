@@ -8,7 +8,7 @@ type Workspace struct {
 	Id 				uuid.UUID 	`json:"id" yaml:"id"`
 	Name  		string 			`json:"name" yaml:"name"`
 	Project 	Project 		`json:"project" yaml:"project"`
-	RoleCodes []string 			`json:"roleCodes" yaml:"roleCodes"`
+	RoleCode  string 			`json:"roleCode" yaml:"roleCode"`
 }
 
 type SetWorkspaceRequest struct {	
