@@ -14,7 +14,7 @@ type Workspace struct {
 type SetWorkspaceRequest struct {	
   Id  						uuid.UUID 				`json:"id,omitempty"`
 	Name  					string 						`json:"name"`
-	RoleCodes  			[]string 					`json:"roleCodes" yaml:"roleCodes"`
+	RoleCode  			string 						`json:"roleCode" yaml:"roleCode"`
 	Signer					AuthEntity 				`json:"signer"`	
 }
 

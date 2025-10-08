@@ -21,7 +21,7 @@ type SetProjectRequest struct {
   Id  						uuid.UUID 				`json:"id,omitempty"`
 	Name  					string 						`json:"name,omitempty"`
 	WorkspaceId  		uuid.UUID					`json:"workspaceId,omitempty"`
-	RoleCodes  			[]string 					`json:"roleCodes" yaml:"roleCodes"`
+	RoleCode  			string 						`json:"roleCode" yaml:"roleCode"`
 	Description  		string 						`json:"description,omitempty"`
 	Keys   			  	[]Key 						`json:"keys,omitempty"`
 	Signer					AuthEntity 				`json:"signer"`	
