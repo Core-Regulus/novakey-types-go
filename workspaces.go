@@ -14,12 +14,14 @@ type Workspace struct {
 type SetWorkspaceRequest struct {	
   Id  						uuid.UUID 				`json:"id,omitempty"`
 	Name  					string 						`json:"name"`
+	RoleCode  			string 						`json:"roleCode" yaml:"roleCode"`
 	Signer					AuthEntity 				`json:"signer"`	
 }
 
 
 type SetWorkspaceResponse struct {
-	Id 					 		uuid.UUID 	 `json:"id,omitempty"`		
+	Id 					 		uuid.UUID 	 `json:"id,omitempty"`
+	RoleCode  			string 			 `json:"roleCode" yaml:"roleCode"`
 	Error
 }
 

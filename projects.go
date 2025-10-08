@@ -21,6 +21,7 @@ type SetProjectRequest struct {
   Id  						uuid.UUID 				`json:"id,omitempty"`
 	Name  					string 						`json:"name,omitempty"`
 	WorkspaceId  		uuid.UUID					`json:"workspaceId,omitempty"`
+	RoleCode  			string 						`json:"roleCode" yaml:"roleCode"`
 	Description  		string 						`json:"description,omitempty"`
 	Keys   			  	[]Key 						`json:"keys,omitempty"`
 	Signer					AuthEntity 				`json:"signer"`	
@@ -32,22 +33,15 @@ type GetProjectRequest struct {
 }
 
 type GetProjectResponse struct {
-	Id  						uuid.UUID 				`json:"id"`
+	Id  						uuid.UUID 				`json:"id"`	
 	Keys   			  	[]Key 						`json:"keys"`
 	Error
 }
 
 type SetProjectResponse struct {
-	Id 					 		uuid.UUID 	 `json:"id,omitempty"`		
+	Id 					 		uuid.UUID 	 `json:"id,omitempty"`
+	RoleCode  			string 			 `json:"roleCode" yaml:"roleCode"`	
 	Error
-}
-
-func (r *SetProjectResponse) GetError() Error {
-	return r.Error
-}
-
-func (r *SetProjectResponse) SetError(err Error) {
-	r.Error = err
 }
 
 type DeleteProjectRequest struct {    
