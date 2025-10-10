@@ -21,7 +21,7 @@ type SetWorkspaceRequest struct {
 
 type SetWorkspaceResponse struct {
 	Id 					 		uuid.UUID 	 `json:"id,omitempty"`
-	RoleCodes  			[]string 			`json:"roleCodes" yaml:"roleCodes"`
+	RoleCode  			string 			 `json:"roleCode" yaml:"roleCode"`
 	Error
 }
 
