@@ -14,16 +14,30 @@ type Workspace struct {
 type SetWorkspaceRequest struct {	
   Id  						uuid.UUID 				`json:"id,omitempty"`
 	Name  					string 						`json:"name"`
+	Description  		string 						`json:"description" yaml:"description"`
 	RoleCode  			string 						`json:"roleCode" yaml:"roleCode"`
 	Signer					AuthEntity 				`json:"signer"`	
 }
-
 
 type SetWorkspaceResponse struct {
 	Id 					 		uuid.UUID 	 `json:"id,omitempty"`
 	RoleCode  			string 			 `json:"roleCode" yaml:"roleCode"`
 	Error
 }
+
+type GetWorkspaceRequest struct {	
+  Id  						uuid.UUID 		`json:"id,omitempty"`	
+	Signer					AuthEntity 		`json:"signer"`	
+}
+
+type GetWorkspaceResponse struct {
+	Id 					 		uuid.UUID 	 `json:"id,omitempty"`
+	Name  					string 			 `json:"name"`
+	Description  		string 			 `json:"description" yaml:"description"`
+	RoleCode  			string 			 `json:"roleCode" yaml:"roleCode"`
+	Error
+}
+
 
 type DeleteWorkspaceRequest struct {    
 	Id  						uuid.UUID `json:"id"`
