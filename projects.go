@@ -34,6 +34,10 @@ type GetProjectRequest struct {
 
 type GetProjectResponse struct {
 	Id  						uuid.UUID 				`json:"id"`	
+	RoleCode  			string 						`json:"roleCode"`
+	Name  					string 						`json:"name"`
+	WorkspaceId  		uuid.UUID					`json:"workspaceId"`
+	Description  		string 						`json:"description"`
 	Keys   			  	[]Key 						`json:"keys"`
 	Error
 }
