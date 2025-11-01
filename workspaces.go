@@ -5,10 +5,11 @@ import (
 )
 
 type Workspace struct {
-	Id 				uuid.UUID 	`json:"id" yaml:"id"`
-	Name  		string 			`json:"name" yaml:"name"`
-	Project 	Project 		`json:"project" yaml:"project"`
-	RoleCode  string 			`json:"roleCode" yaml:"roleCode"`
+	Id 					uuid.UUID 	`json:"id" yaml:"id"`
+	Name  			string 			`json:"name" yaml:"name"`
+	Description string 			`json:"description" yaml:"description"`
+	Project 		Project 		`json:"project" yaml:"project"`
+	RoleCode  	string 			`json:"roleCode" yaml:"roleCode"`
 }
 
 type SetWorkspaceRequest struct {	
