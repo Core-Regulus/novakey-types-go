@@ -9,7 +9,6 @@ type Project struct {
 	WorkspaceId  		uuid.UUID		`json:"workspaceId,omitempty" yaml:"workspaceId"`
 	Description  		string 			`json:"description,omitempty" yaml:"description"`
 	Keys   			  	[]Key 			`json:"keys,omitempty" yaml:"keys"`
-
 }
 
 type Key struct {
@@ -56,4 +55,13 @@ type DeleteProjectRequest struct {
 type DeleteProjectResponse struct {
 	Id  						uuid.UUID 	 `json:"id,omitempty"`
   Error
+}
+
+func (p *Project) GetKey(keyName string) (string, bool) {
+	for _, key := range p.Keys {
+		if key.Key == keyName {
+			return key.Value, true
+		}
+	}
+	return "", false
 }
