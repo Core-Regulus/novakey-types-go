@@ -3,17 +3,24 @@ package novakeytypes
 import "github.com/google/uuid"
 
 type Project struct {
-	Id 							uuid.UUID 	`json:"id" yaml:"id"`
-	RoleCode  			string 			`json:"roleCode" yaml:"roleCode"`
-	Name  					string 			`json:"name" yaml:"name"`
-	WorkspaceId  		uuid.UUID		`json:"workspaceId,omitempty" yaml:"workspaceId"`
-	Description  		string 			`json:"description,omitempty" yaml:"description"`
-	Keys   			  	[]Key 			`json:"keys,omitempty" yaml:"keys"`
+	Id 							uuid.UUID 		`json:"id" yaml:"id"`
+	RoleCode  			string 				`json:"roleCode" yaml:"roleCode"`
+	Name  					string 				`json:"name" yaml:"name"`
+	KeyPass  				string 				`json:"keyPass" yaml:"keyPass"`
+	WorkspaceId  		uuid.UUID			`json:"workspaceId,omitempty" yaml:"workspaceId"`
+	Description  		string 				`json:"description,omitempty" yaml:"description"`
+	Keys   			  	[]Key					`json:"keys,omitempty" yaml:"keys"`
+	Users						[]UserEntry 	`json:"users,omitempty" yaml:"users"`
 }
 
 type Key struct {
-	Key				string `json:"key" yaml:"name"`
+	Key				string `json:"key" yaml:"key"`
 	Value 		string `json:"value" yaml:"value"`
+}
+
+type UserEntry struct {
+	Key				string `json:"key" yaml:"name"`
+	RoleName 	string `json:"roleName" yaml:"roleName"`
 }
 
 type SetProjectRequest struct {	
