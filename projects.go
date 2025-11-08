@@ -14,12 +14,12 @@ type Project struct {
 }
 
 type Key struct {
-	Key				string `json:"key" yaml:"key"`
+	Name			string `json:"name" yaml:"name"`
 	Value 		string `json:"value" yaml:"value"`
 }
 
 type UserEntry struct {
-	Key				string `json:"key" yaml:"name"`
+	Key		string `json:"key" yaml:"key"`
 	RoleName 	string `json:"roleName" yaml:"roleName"`
 }
 
@@ -66,7 +66,7 @@ type DeleteProjectResponse struct {
 
 func (p *Project) GetKey(keyName string) (string, bool) {
 	for _, key := range p.Keys {
-		if key.Key == keyName {
+		if key.Name == keyName {
 			return key.Value, true
 		}
 	}
